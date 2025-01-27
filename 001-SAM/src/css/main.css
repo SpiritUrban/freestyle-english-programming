@@ -9,19 +9,18 @@
     background-position: center;
     background-size: contain;
     transform: translate(-50%, -50%);
-
+    z-index: 999;
 }
 
 body {
-
     margin: 0;
     background-image: url('../../../FEP.webp');
     background-size: cover;
     background-position: center;
-
     height: 100vh;
     width: 100vw;
-    cursor: none;
+    overflow: hidden;
+    z-index: 0;
 }
 
 main {
@@ -33,9 +32,13 @@ main {
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
+    z-index: 0;
+    cursor: none;
+
 }
 
 h1 {
+    cursor: pointer;
     text-align: center;
     position: fixed;
     bottom: -4%;
@@ -48,6 +51,7 @@ h1 {
     color: white;
     background-image: url('../../../assets/img/missile-tech.webp');
     background-size: 24rem;
+    z-index: 1000;
 }
 
 h1 b {

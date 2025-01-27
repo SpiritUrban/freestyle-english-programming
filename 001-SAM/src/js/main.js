@@ -1,13 +1,21 @@
-const log = console.log
+// missile and crosshair
+
 
 const cursor = document.querySelector('#cursor')
 const mainNode = document.querySelector('main')
+const h1Node = document.querySelector('h1')
+
+h1Node.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const missileSound = new Audio('../assets/sounds/pronunciation/missile-and-crosshair.wav');
+    missileSound.play();
+})
 
 log(cursor)
 log(mainNode)
-document.addEventListener('mousemove', (event) => {
-    var x = event.clientX;
-    var y = event.clientY;
+mainNode.addEventListener('mousemove', (event) => {
+    const x = event.clientX;
+    const y = event.clientY;
     cursor.style.left = x + "px"
     cursor.style.top = y + "px"
 })
@@ -20,7 +28,6 @@ document.addEventListener('click', (e) => {
     createRocketElement(x, y);
 })
 
-const pause = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
 async function createRocketElement(x, y) {
 
@@ -30,18 +37,21 @@ async function createRocketElement(x, y) {
     rocket.style.position = 'absolute';
     rocket.style.transition = 'all 1s ease-out';
 
-    rocket.style.left = `500px`;
-    rocket.style.top = `500px`;
-    rocket.style.width = '150px';
-    rocket.style.height = '150px';
-
     const screenWidth = window.innerWidth;
+    const screenHeight = window.innerHeight;
     // Вычисляем центр экрана
     const screenCenter = screenWidth / 2;
     // Вычисляем разницу между позицией клика и центром
     const difference = event.clientX - screenCenter;
     // Логируем разницу
     console.log("Разница относительно центра:", difference);
+
+    rocket.style.left = screenCenter + `px`;
+    rocket.style.top = screenHeight + 100 +`px`;
+    rocket.style.width = '250px';
+    rocket.style.height = '250px';
+    rocket.style.opacity = '1';
+
 
     // Пропорционально переводим разницу в угол
     // Максимальный угол вращения 45 градусов (600 пикселей = 45 градусов)
@@ -62,6 +72,8 @@ async function createRocketElement(x, y) {
     rocket.style.top = `${y}px`;
     rocket.style.width = '50px';
     rocket.style.height = '50px';
+    rocket.style.opacity = '.7';
+
 
 
     await pause(1000);
