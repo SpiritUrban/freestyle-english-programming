@@ -1,0 +1,75 @@
+#cursor {
+    background-image: url('../../../assets/img/crosshair.png');
+    height: 6rem;
+    width: 6rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    background-position: center;
+    background-size: contain;
+    transform: translate(-50%, -50%);
+
+}
+
+body {
+
+    margin: 0;
+    background-image: url('../../../FEP.webp');
+    background-size: cover;
+    background-position: center;
+
+    height: 100vh;
+    width: 100vw;
+    cursor: none;
+}
+
+main {
+    height: 100vh;
+    width: 100vw;
+    background-color: #16849ff0;
+    overflow: hidden;
+    /* From https://css.glass */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+h1 {
+    text-align: center;
+    position: fixed;
+    bottom: -4%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    font-size: 13rem;
+    margin: 0;
+    background: #000000cc;
+    width: 100%;
+    color: white;
+    background-image: url('../../../assets/img/missile-tech.webp');
+    background-size: 24rem;
+}
+
+h1 b {
+    background: #0000009e;
+    width: 100%;
+    display: block;
+    text-shadow: 1px 1px 2px #fbb181, 0 0 1em #1212a0, 0 0 0.2em #0000008a;
+}
+
+.rocket {
+    width: 150px;
+    height: 150px;
+    background-size: cover;
+    background-position: center;
+    transition: all 1s ease-out;
+    top: 500px;
+    left: 500px;
+  }
+  
+  .explosion {
+    width: 100px;
+    height: 100px;
+    background-size: cover;
+    background-position: center;
+  }
