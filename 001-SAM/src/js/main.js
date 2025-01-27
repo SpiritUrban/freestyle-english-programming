@@ -22,6 +22,7 @@ mainNode.addEventListener('mousemove', (event) => {
 
 document.addEventListener('click', (e) => {
     const missileSound = new Audio('../assets/sounds/missile-firing.mp3');
+    missileSound.volume = 0.1;
     missileSound.play();
     const x = e.clientX;
     const y = e.clientY;
